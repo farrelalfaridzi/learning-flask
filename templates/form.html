@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Form Pertama</h2>
+
+<form action="/form" method="post">
+
+    <label>Jumlah :</label>
+    <input type="number" name="jumlah">
+    <br><br>
+
+    <label>Kategori :</label>
+    <input type="text" name="kategori">
+    <br><br>
+
+    <label>Catatan :</label>
+    <input type="text" name="catatan">
+    <br><br>
+
+    <button type="submit">tambah</button>
+
+</form>
+
+{% endblock %}

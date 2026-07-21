@@ -1,14 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Learning Flask</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-    <h1>Halo Farrel!</h1>
+{% block content %}
 
-    <p>Website Flask pertama.</p>
+<h2>Home</h2>
 
-</body>
-</html>
+<h3>Halo, {{ nama }}</h3>
+
+<p>Umur : {{ umur }}</p>
+
+<p>Jurusan : {{ jurusan }}</p>
+
+<h4>Hobi</h4>
+
+<ul>
+    {% for item in hobi %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+
+<h4>Saldo</h4>
+
+<p>Saldo : {{ saldo }}</p>
+
+{% if saldo < 0 %}
+<p>saldo minus</p>
+{% elif saldo > 0 %}
+<p>saldo aman</p>
+{% else %}
+<p>saldo nol</p>
+{% endif %}
+
+
+<p>Selamat datang di website Flask pertama saya.</p>
+
+{% endblock %}
